@@ -148,6 +148,14 @@ mod tests {
         assert_eq!("ctrl-click".parse(), Ok(Macro::Mouse(
             MouseEvent(MouseAction::Click(MouseButton::Left.into()), Some(MouseModifier::Ctrl))
         )));
+        // Run a bash script from a file
+        // assert_eq!("run {path}".parse(), Ok(Macro::Code(
+        //     // take the path from the string and run it
+        //     Application("bash".to_string(), vec!["{path}".to_string()])
+        // )));
+        assert_eq!("falador".parse(), Ok(
+            Command::new("say hello its me i was wondering if after all these years youd like to meet")
+        ));
     }
 
     #[test]
